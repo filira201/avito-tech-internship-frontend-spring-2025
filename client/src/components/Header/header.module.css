@@ -1,0 +1,24 @@
+.header {
+  position: sticky;
+  top: var(--separator-vertical-position);
+  z-index: var(--layer-above-default);
+  background-color: var(--color-light);
+  padding: 15px 16px;
+  width: 100%;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: var(--separator-vertical-position);
+  left: var(--separator-horizontal-position);
+  right: var(--separator-horizontal-position);
+  height: var(--separator-height);
+  background-color: var(--separator-color);
+}
+
+@media (max-width: 640px) {
+  .header::after {
+    --separator-horizontal-position: 0px;
+  }
+}

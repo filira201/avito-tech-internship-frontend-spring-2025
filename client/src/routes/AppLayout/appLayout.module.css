@@ -1,0 +1,35 @@
+.main {
+  --mainPadding: var(--container-padding);
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  margin: 0px auto 14px;
+  padding: var(--mainPadding);
+}
+
+.wrapper {
+  --wrapperMarginTop: 32px;
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  margin-top: var(--wrapperMarginTop);
+}
+
+@media (max-width: 1024px) {
+  .main {
+    --mainPadding: 0px round(up, 3.22223%, 0.2rem);
+  }
+  .wrapper {
+    --wrapperMarginTop: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main {
+    --mainPadding: 0px round(up, 2.22223%, 0.2rem);
+  }
+  .wrapper {
+    --wrapperMarginTop: 16px;
+  }
+}

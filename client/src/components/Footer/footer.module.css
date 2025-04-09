@@ -1,0 +1,28 @@
+.footer {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  padding: 15px 16px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: var(--separator-vertical-position);
+  left: var(--separator-horizontal-position);
+  right: var(--separator-horizontal-position);
+  height: var(--separator-height);
+  background-color: var(--separator-color);
+}
+
+.paragraph {
+  color: var(--color-light-gray);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .footer::before {
+    --separator-horizontal-position: 0px;
+  }
+}

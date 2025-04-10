@@ -18,7 +18,7 @@
 .paragraph {
   color: var(--color-light-gray);
   text-align: center;
-  font-size: 0.9rem;
+  font-size: var(--font-size-xm)
 }
 
 @media (max-width: 640px) {

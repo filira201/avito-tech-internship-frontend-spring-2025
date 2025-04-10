@@ -3,19 +3,41 @@
   --color-dark: #050505;
   --color-light-dark: #1a1a1a;
   --color-light-gray: #00000066;
+  --color-red: #e70e0e;
+  --color-accent-red: #c50c0c;
+  --color-blue: #0582ff;
+  --color-accent-blue: #045ac3;
+  --color-light-blue: #ebf5fe;
+  --color-accent-light-blue: #d6e1f5;
 
   --container-width: 1252px;
   --container-padding: 0px round(up, 7.22223%, 0.2rem);
+
+  --header-width: 1400px;
+  --header-padding-y: 15px;
+  --header-padding-x: 16px;
 
   --separator-color: #0000001a;
   --separator-height: 1px;
   --separator-vertical-position: 0px;
   --separator-horizontal-position: 16px;
 
+  --border-radius-md: 6px;
+  --border-radius-lg: 8px;
+
+  --font-size-lg: 1.15rem;
+  --font-size-base: 1rem;
+  --font-size-xm: 0.9rem;
+
+  --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-duration: 0.2s;
+
   --layer-above-default: 10;
 
   --font-family-base: "Manrope", system-ui, sans-serif;
 }
+
+/* я использую 1024, 640 */
 
 @font-face {
   font-family: "Manrope";
@@ -168,9 +190,10 @@ html {
       */
   scrollbar-gutter: stable;
 
-  /* Добавил Шрифт */
+  /* Добавил Шрифт и размер текста */
   font-family: var(--font-family-base);
-  /* Добавил Шрифт */
+  font-size: var(--font-size-base);
+  /* Добавил Шрифт и размер текста */
 }
 
 /**

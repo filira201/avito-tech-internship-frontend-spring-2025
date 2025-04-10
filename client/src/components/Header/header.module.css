@@ -1,9 +1,12 @@
 .header {
+  --headerPaddingY: var(--header-padding-y);
+  --headerPaddingX: var(--header-padding-x);
+
   position: sticky;
   top: var(--separator-vertical-position);
   z-index: var(--layer-above-default);
   background-color: var(--color-light);
-  padding: 15px 16px;
+  padding: var(--headerPaddingY) var(--headerPaddingX);
   width: 100%;
 }
 
@@ -17,7 +20,19 @@
   background-color: var(--separator-color);
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--header-width);
+  margin: 0 auto;
+}
+
 @media (max-width: 640px) {
+  .header {
+    --headerPaddingY: 10px;
+    --headerPaddingX: 12px;
+  }
   .header::after {
     --separator-horizontal-position: 0px;
   }

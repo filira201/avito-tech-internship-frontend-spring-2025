@@ -1,0 +1,64 @@
+.button {
+  --buttonFontSize: var(--font-size-base);
+  --buttonPaddingY: 12px;
+  --buttonPaddingX: 16px;
+  --buttonBackgroundColor: var(--color-blue);
+  --buttonAccentBackgroundColor: var(--color-accent-blue);
+  --buttonTextColor: var(--color-light);
+
+  font-size: var(--buttonFontSize);
+  border-radius: var(--border-radius-lg);
+  padding: var(--buttonPaddingY) var(--buttonPaddingX);
+  background-color: var(--buttonBackgroundColor);
+  color: var(--buttonTextColor);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    transform var(--transition-duration) var(--transition-timing-function);
+  border: none;
+  outline: none;
+}
+
+.small {
+  --buttonPaddingY: 8px;
+  --buttonPaddingX: 12px;
+}
+
+.large {
+  --buttonFontSize: var(--font-size-lg);
+  --buttonPaddingY: 16px;
+  --buttonPaddingX: 24px;
+}
+
+.secondary {
+  --buttonBackgroundColor: var(--color-light-blue);
+  --buttonTextColor: var(--color-dark);
+  --buttonAccentBackgroundColor: var(--color-accent-light-blue);
+}
+
+.danger {
+  --buttonBackgroundColor: var(--color-red);
+  --buttonAccentBackgroundColor: var(--color-accent-red);
+}
+
+@media (hover: hover) {
+  .button:not(:disabled):hover {
+    background-color: var(--buttonAccentBackgroundColor);
+  }
+}
+
+@media (hover: none) {
+  .button:not(:disabled):active {
+    background-color: var(--buttonAccentBackgroundColor);
+  }
+}
+
+.button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

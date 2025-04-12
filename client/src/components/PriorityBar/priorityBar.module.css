@@ -1,0 +1,16 @@
+.priorityBar {
+  height: 10px;
+  width: 100%;
+}
+
+.high {
+  background-color: var(--color-red);
+}
+
+.medium {
+  background-color: var(--color-orange);
+}
+
+.low {
+  background-color: var(--color-green);
+}

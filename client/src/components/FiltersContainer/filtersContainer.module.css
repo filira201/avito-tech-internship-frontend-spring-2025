@@ -1,0 +1,20 @@
+.container {
+  --containerPaddingY: var(--card-gap);
+  --containerPaddingX: var(--card-gap);
+  --containerGap: var(--card-gap);
+  padding: var(--containerPaddingY) var(--containerPaddingX);
+  border-radius: var(--border-radius-lg);
+  background: var(--color-light);
+  border: 1px solid var(--color-accent-light-blue);
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+}
+
+@media (max-width: 640px) {
+  .container {
+    --containerPaddingY: 6px;
+    --containerPaddingX: 8px;
+    --card-gap: 10px;
+  }
+}

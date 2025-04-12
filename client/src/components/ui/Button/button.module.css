@@ -17,7 +17,6 @@
       var(--transition-timing-function),
     transform var(--transition-duration) var(--transition-timing-function);
   border: none;
-  outline: none;
 }
 
 .small {

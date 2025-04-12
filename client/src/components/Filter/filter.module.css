@@ -1,0 +1,23 @@
+.paragraph {
+  --descriptionFontSize: var(--font-size-base);
+  font-size: var(--descriptionFontSize);
+  color: var(--color-dark-gray);
+}
+
+.filterContainer {
+  --filterContainerGap: var(--card-gap);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--filterContainerGap);
+  margin-top: 4px;
+}
+
+@media (max-width: 640px) {
+  .filterContainer {
+    --filterContainerGap: 8px;
+  }
+  .paragraph {
+    --descriptionFontSize: var(--font-size-xm);
+  }
+}

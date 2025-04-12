@@ -1,0 +1,22 @@
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.filterContainer {
+  margin-top: 8px;
+  transform: scaleY(0);
+  transform-origin: top center;
+  opacity: 0;
+  max-height: 0;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity var(--transition-duration) linear, max-height 0s linear 0.3s;
+}
+
+.filterContentOpen {
+  transform: scaleY(1);
+  opacity: 1;
+  max-height: 1000px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.1s linear 0.15s, max-height 0s linear;
+}

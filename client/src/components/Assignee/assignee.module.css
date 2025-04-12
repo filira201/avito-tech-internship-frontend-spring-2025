@@ -1,0 +1,38 @@
+.assignee {
+  --assigneeGap: var(--card-gap);
+  --avatarSize: 44px;
+  --nameEmailFontSize: var(--font-size-xm);
+  display: flex;
+  align-items: center;
+  gap: var(--assigneeGap);
+}
+
+.avatar {
+  width: var(--avatarSize);
+  height: var(--avatarSize);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: 500;
+  font-size: var(--nameEmailFontSize);
+}
+
+.email {
+  font-size: var(--nameEmailFontSize);
+  color: var(--color-light-gray);
+}
+
+@media (max-width: 640px) {
+  .assignee {
+    --assigneeGap: 8px;
+    --avatarSize: 38px;
+    --nameEmailFontSize: var(--font-size-xs);
+  }
+}

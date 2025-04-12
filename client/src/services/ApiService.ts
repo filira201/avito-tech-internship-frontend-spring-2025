@@ -1,18 +1,25 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IBoardData } from "../models/models";
+import { BoardsDataType, TasksIssuesDataType } from "../models/models";
 
 export const api = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080/api/v1" }),
-  tagTypes: ["Boards", "Teams", "Tasks", "Users"],
+  tagTypes: ["Boards", "Tasks"],
   endpoints: (builder) => ({
-    fetchBoards: builder.query<IBoardData, void>({
+    fetchBoards: builder.query<BoardsDataType, void>({
       query: () => ({
         url: "/boards",
       }),
       providesTags: ["Boards"],
     }),
+
+    fetchTasks: builder.query<TasksIssuesDataType, void>({
+      query: () => ({
+        url: "/tasks",
+      }),
+      providesTags: ["Tasks"],
+    }),
   }),
 });
 
-export const { useFetchBoardsQuery } = api;
+export const { useFetchBoardsQuery, useFetchTasksQuery } = api;

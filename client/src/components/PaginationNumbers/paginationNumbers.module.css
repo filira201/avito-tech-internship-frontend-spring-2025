@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  padding: 0 4px;
+}
+
+.button {
+  display: flex;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xm);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-gray);
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  background-color: transparent;
+}
+
+.active {
+  background-color: var(--color-blue);
+  color: var(--color-light);
+}
+
+@media (hover: hover) {
+  .button:not(.active):hover {
+    background-color: var(--color-gray);
+  }
+}
+
+@media (hover: none) {
+  .button:not(.active):active {
+    background-color: var(--color-gray);
+  }
+}

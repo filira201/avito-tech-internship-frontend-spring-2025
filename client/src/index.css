@@ -3,9 +3,12 @@
   --color-dark: #050505;
   --color-light-dark: #1a1a1a;
   --color-gray: #cccccc;
+  --color-dark-gray: #666666;
   --color-light-gray: #00000066;
   --color-red: #e70e0e;
   --color-accent-red: #c50c0c;
+  --color-orange: #ffd166;
+  --color-green: #06d6a0;
   --color-blue: #0582ff;
   --color-accent-blue: #045ac3;
   --color-light-blue: #ebf5fe;
@@ -17,8 +20,6 @@
 
   --card-minmax-width: 400px;
   --card-gap: 12px;
-  --card-padding-x: 20px;
-  --card-padding-y: 20px;
   --card-paragraph-line-height: 1.4;
 
   --header-width: 1400px;
@@ -42,6 +43,7 @@
   --font-size-lg: 1.15rem;
   --font-size-base: 1rem;
   --font-size-xm: 0.9rem;
+  --font-size-xs: 0.75rem;
 
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --transition-duration: 0.2s;

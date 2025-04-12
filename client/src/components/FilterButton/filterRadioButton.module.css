@@ -1,0 +1,43 @@
+.filterButton {
+  --filterButtonFontSize: var(--font-size-base);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: var(--filterButtonFontSize);
+  border-radius: 0.5rem;
+  padding: 0.625rem 1.25rem 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.filterButtonDefault {
+  background-color: #f2f1f0;
+}
+
+.filterButtonSelected {
+  background-color: #02d15c;
+  color: white;
+}
+
+.filterButtonDefault:hover {
+  background-color: #ebeae8;
+}
+
+.filterButtonDefault:active {
+  background-color: #ebeae8;
+}
+
+.srOnly {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50);
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 0px;
+  border-width: 0;
+}
+
+@media (max-width: 640px) {
+  .filterButton {
+    --filterButtonFontSize: var(--font-size-xm);
+  }
+}

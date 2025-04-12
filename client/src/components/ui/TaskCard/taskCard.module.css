@@ -1,0 +1,87 @@
+.card {
+  --cardBoxShadow: var(--box-shadow);
+  --cardGap: var(--card-gap);
+  --tileFontSize: var(--font-size-xl);
+  --blocksGap: var(--card-gap);
+  --descriptionFontSize: var(--font-size-base);
+  --labelsWrapperGap: 8px;
+
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--cardBoxShadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
+}
+
+.content {
+  padding: var(--cardGap);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.title {
+  font-size: var(--tileFontSize);
+  font-weight: 700;
+  color: var(--color-light-dark);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  flex: 1;
+}
+
+.description {
+  margin-top: var(--blocksGap);
+  line-height: var(--card-paragraph-line-height);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: var(--descriptionFontSize);
+  color: var(--color-dark-gray);
+}
+
+.labelsWrapper {
+  display: flex;
+  gap: var(--labelsWrapperGap);
+  flex-wrap: wrap;
+}
+
+.assigneeWrapper {
+  margin-top: 8px;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-2px);
+    --cardBoxShadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 640px) {
+  .card {
+    --cardGap: 8px;
+    --tileFontSize: var(--font-size-lg);
+    --blocksGap: 6px;
+    --descriptionFontSize: var(--font-size-xm);
+    --labelsWrapperGap: 4px;
+  }
+}

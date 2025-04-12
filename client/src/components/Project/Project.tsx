@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { IBoard } from "../../models/models";
+import { BoardType } from "../../models/models";
 import { Link } from "react-router";
 import styles from "./project.module.css";
 
 interface ProjectProps {
-  project: IBoard;
+  project: BoardType;
 }
 
 const Project: FC<ProjectProps> = ({ project }) => {

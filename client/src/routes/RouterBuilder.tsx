@@ -10,7 +10,7 @@ const RouterBuilder = () => {
   const generalRoutes = [
     {
       path: "/",
-      element: <Navigate to="/boards" replace />,
+      element: <Navigate to="/issues" replace />,
     },
     {
       path: "/boards",

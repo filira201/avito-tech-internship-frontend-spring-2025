@@ -1,0 +1,58 @@
+.arrowButton {
+  --arrowButtonBackgroundColor: var(--color-light-blue);
+
+  display: flex;
+  background-color: var(--arrowButtonBackgroundColor);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-gray);
+  flex-shrink: 0;
+}
+
+@media (hover: hover) {
+  .arrowButton:not(:disabled):hover {
+    --arrowButtonBackgroundColor: var(--color-accent-light-blue);
+  }
+}
+
+@media (hover: none) {
+  .arrowButton:not(:disabled):active {
+    --arrowButtonBackgroundColor: var(--color-accent-light-blue);
+  }
+}
+
+.arrowButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.right {
+  --rightMarginLeft: 16px;
+  margin-left: var(--rightMarginLeft);
+}
+
+.left {
+  --rightMarginRight: 16px;
+  margin-right: var(--rightMarginRight);
+}
+
+.svgArrow {
+  width: 24px;
+  height: 24px;
+  color: var(--color-dark);
+}
+
+@media (max-width: 640px) {
+  .right {
+    --rightMarginLeft: 8px;
+  }
+  .left {
+    --rightMarginRight: 8px;
+  }
+}

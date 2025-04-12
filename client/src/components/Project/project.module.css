@@ -1,15 +1,17 @@
 .card {
   --cardGap: var(--card-gap);
-  --cardPaddingX: var(--card-padding-x);
-  --cardPaddingY: var(--card-padding-y);
+  --cardPaddingX: var(--card-gap);
+  --cardPaddingY: var(--card-gap);
   --cardBoxShadow: var(--box-shadow);
+  --tileFontSize: var(--font-size-xl);
+  --paragraphFontSize: var(--font-size-base);
 
   display: flex;
   flex-direction: column;
   gap: var(--cardGap);
   padding: var(--cardPaddingY) var(--cardPaddingX);
   border: 1px solid var(--color-gray);
-  border-radius: var(--border-radius-2xl);
+  border-radius: var(--border-radius-lg);
   background-color: var(--color-light);
   box-shadow: var(--cardBoxShadow);
   transition: transform var(--transition-duration)
@@ -19,7 +21,7 @@
 }
 
 .title {
-  font-size: var(--font-size-xl);
+  font-size: var(--tileFontSize);
   color: var(--color-light-dark);
   font-weight: 700;
   word-break: break-word;
@@ -36,6 +38,8 @@
   line-height: var(--card-paragraph-line-height);
   word-break: break-word;
   overflow-wrap: break-word;
+  font-size: var(--paragraphFontSize);
+  color: var(--color-dark-gray);
 }
 
 .span {
@@ -43,6 +47,7 @@
 }
 
 .link {
+  align-self: flex-start;
   font-weight: 500;
   color: var(--color-blue);
   text-decoration: none;
@@ -68,7 +73,9 @@
 @media (max-width: 640px) {
   .card {
     --cardGap: 10px;
-    --cardPaddingX: 16px;
-    --cardPaddingY: 16px;
+    --cardPaddingX: 8px;
+    --cardPaddingY: 8px;
+    --tileFontSize: var(--font-size-lg);
+    --paragraphFontSize: var(--font-size-xm);
   }
 }

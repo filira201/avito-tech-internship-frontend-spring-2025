@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import { ButtonSize, ButtonVariant } from "../../../types/button";
+import { ButtonSize, ButtonVariant } from "../../../types/types";
 import classNames from "classnames";
 import styles from "./button.module.css";
 

@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { BoardsDataType, TasksIssuesDataType } from "../models/models";
+import {
+  BoardsDataType,
+  TasksBoardDataType,
+  TasksIssuesDataType,
+} from "../models/models";
 
 export const api = createApi({
   reducerPath: "api",
@@ -19,7 +23,18 @@ export const api = createApi({
       }),
       providesTags: ["Tasks"],
     }),
+
+    fetchTasksByBoardId: builder.query<TasksBoardDataType, number>({
+      query: (boardId) => ({
+        url: `/boards/${boardId}`,
+      }),
+      providesTags: ["Tasks"],
+    }),
   }),
 });
 
-export const { useFetchBoardsQuery, useFetchTasksQuery } = api;
+export const {
+  useFetchBoardsQuery,
+  useFetchTasksQuery,
+  useFetchTasksByBoardIdQuery,
+} = api;

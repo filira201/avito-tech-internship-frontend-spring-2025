@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: var(--cardGap);
   padding: var(--cardPaddingY) var(--cardPaddingX);
-  border: 1px solid var(--color-gray);
+  border: 1px solid var(--color-light-blue);
   border-radius: var(--border-radius-lg);
   background-color: var(--color-light);
   box-shadow: var(--cardBoxShadow);

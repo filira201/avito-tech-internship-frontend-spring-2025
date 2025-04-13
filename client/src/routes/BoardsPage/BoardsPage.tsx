@@ -15,7 +15,7 @@ const BoardsPage = () => {
 
   const projects = data?.data || [];
   if (!projects.length) {
-    return <h2 className={styles.notFountTitle}>У вас пока нет проектов</h2>;
+    return <h1 className={styles.notFountTitle}>У вас пока нет проектов</h1>;
   }
 
   return (

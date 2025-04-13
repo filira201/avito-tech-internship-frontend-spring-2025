@@ -1,0 +1,113 @@
+.titleH1 {
+  --fontSizeH1: var(--font-size-3xl);
+  font-size: var(--fontSizeH1);
+  color: var(--color-light-dark);
+  font-weight: 700;
+}
+
+.notFountTitle {
+  --fontSizeNFT: var(--font-size-2xl);
+  font-size: var(--fontSizeNFT);
+  text-align: center;
+  margin-top: var(--section-gap);
+  color: var(--color-light-gray);
+  font-weight: 700;
+}
+
+.boardContainer {
+  --columnGap: var(--container-gap);
+  --columnPadding: 16px;
+  --columnBorderRadius: var(--border-radius-lg);
+  --taskGap: var(--card-gap);
+  --tileFontSize: var(--font-size-2xl);
+
+  margin-top: var(--section-gap);
+}
+
+.columnsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--columnGap);
+  align-items: stretch;
+}
+
+.column {
+  background-color: var(--color-light);
+  border-radius: var(--columnBorderRadius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--color-light-blue);
+  padding: var(--columnPadding);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: auto;
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: var(--separator-height) solid var(--separator-color);
+}
+
+.columnTitle {
+  font-size: var(--tileFontSize);
+  color: var(--color-light-dark);
+  font-weight: 700;
+}
+
+.taskCount {
+  background-color: #f0f0f0;
+  font-weight: 500;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+}
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--taskGap);
+  flex: 1;
+  margin-top: 16px;
+}
+
+.emptyColumn {
+  text-align: center;
+  font-weight: 500;
+  padding: 16px;
+  font-size: var(--font-size-base);
+  background-color: #f0f0f0;
+  border-radius: var(--border-radius-md);
+}
+
+@media (max-width: 1200px) {
+  .columnsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--columnGap);
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .titleH1 {
+    --fontSizeH1: var(--font-size-2xl);
+  }
+
+  .notFountTitle {
+    --fontSizeNFT: var(--font-size-xl);
+  }
+  .boardContainer {
+    --tileFontSize: var(--font-size-xl);
+    --columnPadding: 12px;
+  }
+}

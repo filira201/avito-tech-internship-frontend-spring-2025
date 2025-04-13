@@ -76,10 +76,8 @@ const TasksPage = () => {
   }
   const tasks = data?.data || [];
   if (!tasks.length) {
-    return <h2 className={styles.notFountTitle}>У вас пока нет задач</h2>;
+    return <h1 className={styles.notFountTitle}>У вас пока нет задач</h1>;
   }
-
-  console.log("render");
 
   return (
     <div>
@@ -100,6 +98,7 @@ const TasksPage = () => {
             renderItem={(task: TaskIssuesType) => (
               <TaskCard
                 key={task.id}
+                showDetails={true}
                 task={task}
                 onClick={() => {
                   console.log(task.id);

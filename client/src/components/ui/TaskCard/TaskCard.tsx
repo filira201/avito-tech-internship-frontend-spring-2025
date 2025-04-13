@@ -8,10 +8,11 @@ import styles from "./taskCard.module.css";
 
 interface TaskCardProps {
   task: TaskIssuesType | TaskBoardType;
+  showDetails: boolean;
   onClick: () => void;
 }
 
-const TaskCard: FC<TaskCardProps> = ({ task, onClick }) => {
+const TaskCard: FC<TaskCardProps> = ({ task, showDetails, onClick }) => {
   return (
     <article
       className={styles.card}
@@ -34,7 +35,9 @@ const TaskCard: FC<TaskCardProps> = ({ task, onClick }) => {
             <h2 className={styles.title}>{task.title}</h2>
             <TaskStatus status={task.status} />
           </div>
-          <p className={styles.description}>{task.description}</p>
+          {showDetails && (
+            <p className={styles.description}>{task.description}</p>
+          )}
         </div>
 
         <div>

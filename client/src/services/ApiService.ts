@@ -9,7 +9,10 @@ import {
 
 export const api = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:8080/api/v1" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl:
+      import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/api/v1",
+  }),
   tagTypes: ["Boards", "Tasks", "Users"],
   endpoints: (builder) => ({
     fetchBoards: builder.query<BoardsDataType, void>({

@@ -3,7 +3,6 @@ import FiltersContent from "../../components/FiltersContent/FiltersContent";
 import List from "../../components/List/List";
 import Search from "../../components/Search/Search";
 import Button from "../../components/ui/Button/Button";
-import TaskCard from "../../components/ui/TaskCard/TaskCard";
 import {
   calculateFilterTasksByBoardName,
   calculateFilterTasksBySearchQuery,
@@ -18,10 +17,16 @@ import { BoarsNamesOption, StatusOption } from "../../types/types";
 import { useSearchParams } from "react-router";
 import { ITEMS_PER_PAGE } from "../../lib/constants";
 import Pagination from "../../components/Pagination/Pagination";
+import TaskCard from "../../components/TaskCard/TaskCard";
+import { useAppDispatch } from "../../hooks/redux";
+import { openModal } from "../../store/reducers/modalSlice";
+import Loader from "../../components/Loader/Loader";
+import ErrorPage from "../../components/ErrorPage/ErrorPage";
 
 const TasksPage = () => {
   const { data, isLoading, isFetching, error } = useFetchTasksQuery();
   const [searchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
 
   const uniqueTasksBoardNameObject: BoarsNamesOption[] = useMemo(() => {
     if (!data?.data) return [];
@@ -69,10 +74,9 @@ const TasksPage = () => {
     return { page, totalPages, paginatedTasks };
   }, [searchParams, data?.data]);
 
-  if (isLoading || isFetching) return <h1>Loading</h1>;
+  if (isLoading || isFetching) return <Loader />;
   if (error) {
-    console.log(error);
-    // return <h1>Error loading boards</h1>;
+    return <ErrorPage error={error} />;
   }
   const tasks = data?.data || [];
   if (!tasks.length) {
@@ -101,14 +105,25 @@ const TasksPage = () => {
                 showDetails={true}
                 task={task}
                 onClick={() => {
-                  console.log(task.id);
+                  dispatch(
+                    openModal({
+                      isCreate: false,
+                      context: {
+                        fromTasks: true,
+                        taskId: task.id,
+                        boardId: task.boardId,
+                      },
+                    })
+                  );
                 }}
               />
             )}
           />
         </div>
         <div className={styles.buttonWrapper}>
-          <Button>Создать задачу</Button>
+          <Button onClick={() => dispatch(openModal({ isCreate: true }))}>
+            Создать задачу
+          </Button>
         </div>
         {!paginatedTasks.length ? (
           <h2 className={styles.notFountTitle}>Задач не найдено</h2>

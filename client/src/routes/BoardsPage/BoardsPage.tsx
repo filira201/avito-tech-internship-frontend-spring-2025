@@ -1,4 +1,6 @@
+import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import List from "../../components/List/List";
+import Loader from "../../components/Loader/Loader";
 import Project from "../../components/Project/Project";
 import { BoardType } from "../../models/models";
 import { useFetchBoardsQuery } from "../../services/ApiService";
@@ -7,10 +9,9 @@ import styles from "./boardPage.module.css";
 const BoardsPage = () => {
   const { data, isLoading, isFetching, error } = useFetchBoardsQuery();
 
-  if (isLoading || isFetching) return <h1>Loading</h1>;
+  if (isLoading || isFetching) return <Loader />;
   if (error) {
-    console.log(error);
-    // return <h1>Error loading boards</h1>;
+    return <ErrorPage error={error} />;
   }
 
   const projects = data?.data || [];

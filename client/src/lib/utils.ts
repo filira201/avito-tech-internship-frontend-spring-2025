@@ -1,4 +1,4 @@
-import { StatusType, TaskIssuesType } from "../models/models";
+import { ApiError, StatusType, TaskIssuesType } from "../models/models";
 import {
   BoarsNamesOption,
   RussianStatusType,
@@ -10,6 +10,15 @@ import { ITEMS_PER_PAGE } from "./constants";
 export const translateStatus = (status: StatusType): RussianStatusType => {
   return statusTranslation[status];
 };
+
+export function isApiError(error: unknown): error is ApiError {
+  return (
+    typeof error === "object" &&
+    error !== null &&
+    "status" in error &&
+    "data" in error
+  );
+}
 
 export function getUniqueItems<T>(items: T[]): T[] {
   const uniqueItems = new Set<T>();

@@ -1,10 +1,10 @@
 import { FC } from "react";
-import Assignee from "../../Assignee/Assignee";
-import PriorityBar from "../../PriorityBar/PriorityBar";
-import { TaskBoardType, TaskIssuesType } from "../../../models/models";
-import BoardLabel from "../../BoardLabel/BoardLabel";
-import TaskStatus from "../../TaskStatus/TaskStatus";
 import styles from "./taskCard.module.css";
+import { TaskBoardType, TaskIssuesType } from "../../models/models";
+import PriorityBar from "../PriorityBar/PriorityBar";
+import TaskStatus from "../TaskStatus/TaskStatus";
+import BoardLabel from "../BoardLabel/BoardLabel";
+import Assignee from "../Assignee/Assignee";
 
 interface TaskCardProps {
   task: TaskIssuesType | TaskBoardType;

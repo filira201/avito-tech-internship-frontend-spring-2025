@@ -1,0 +1,33 @@
+.container {
+  --titleFontSize: var(--font-size-3xl);
+
+  padding: 16px;
+  gap: 16px;
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--titleFontSize);
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+.buttonsContainer {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    --titleFontSize: var(--font-size-2xl);
+  }
+  .buttonsContainer {
+    flex-direction: column;
+  }
+}

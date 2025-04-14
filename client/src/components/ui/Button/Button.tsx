@@ -1,9 +1,10 @@
 import { FC, ReactNode } from "react";
-import { ButtonSize, ButtonVariant } from "../../../types/types";
+import { ButtonSize, ButtonType, ButtonVariant } from "../../../types/types";
 import classNames from "classnames";
 import styles from "./button.module.css";
 
 interface ButtonProps {
+  type?: ButtonType;
   size?: ButtonSize;
   variant?: ButtonVariant;
   disabled?: boolean;
@@ -12,6 +13,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
+  type = "button",
   size = "medium",
   variant = "primary",
   disabled = false,
@@ -25,7 +27,12 @@ const Button: FC<ButtonProps> = ({
   );
 
   return (
-    <button className={buttonClasses} onClick={onClick} disabled={disabled}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+      type={type}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

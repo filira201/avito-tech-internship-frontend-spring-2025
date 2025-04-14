@@ -1,0 +1,103 @@
+.modalContent {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  padding: 32px;
+}
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  color: var(--color-light-dark);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.taskForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formRow {
+  display: flex;
+  gap: 20px;
+}
+
+.formRow .formGroup {
+  flex: 1;
+}
+
+.formLabel {
+  font-size: var(--font-size-base);
+  color: var(--color-dark-gray);
+  font-weight: 500;
+}
+
+.formInput,
+.formTextarea,
+.formSelect {
+  padding: 12px 16px;
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  transition: border-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.formInput:focus,
+.formTextarea:focus,
+.formSelect:focus {
+  outline: none;
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 2px var(--color-light-blue);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.error {
+  border-color: var(--color-red);
+}
+
+.errorMessage {
+  color: var(--color-red);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}
+
+.rootErrorMessage {
+  color: var(--color-red);
+  font-size: var(--font-size-xm);
+  margin-top: 4px;
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .modalContent {
+    padding: 24px;
+  }
+
+  .formRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .formActions {
+    flex-direction: column-reverse;
+  }
+}

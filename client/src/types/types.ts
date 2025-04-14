@@ -7,6 +7,7 @@ export type LinkType = {
 
 export type ButtonSize = "small" | "medium" | "large";
 export type ButtonVariant = "primary" | "secondary" | "danger";
+export type ButtonType = "button" | "submit";
 
 export type RussianStatusType = "Выполнить" | "В работе" | "Готово";
 export const statusTranslation: Record<StatusType, RussianStatusType> = {

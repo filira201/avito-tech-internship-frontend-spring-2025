@@ -1,18 +1,22 @@
 import { useParams } from "react-router";
 import { useFetchTasksByBoardIdQuery } from "../../services/ApiService";
 import styles from "./BoardPage.module.css";
-import TaskCard from "../../components/ui/TaskCard/TaskCard";
+import TaskCard from "../../components/TaskCard/TaskCard";
+import { useAppDispatch } from "../../hooks/redux";
+import { openModal } from "../../store/reducers/modalSlice";
+import Loader from "../../components/Loader/Loader";
+import ErrorPage from "../../components/ErrorPage/ErrorPage";
 
 const BoardPage = () => {
   const { id } = useParams();
   const { data, isLoading, isFetching, error } = useFetchTasksByBoardIdQuery(
     Number(id)
   );
+  const dispatch = useAppDispatch();
 
-  if (isLoading || isFetching) return <h1>Loading</h1>;
+  if (isLoading || isFetching) return <Loader />;
   if (error) {
-    console.log(error);
-    // return <h1>Error loading tasks</h1>;
+    return <ErrorPage error={error} />;
   }
 
   const tasks = data?.data || [];
@@ -59,7 +63,18 @@ const BoardPage = () => {
                       key={task.id}
                       task={task}
                       showDetails={false}
-                      onClick={() => console.log("Task clicked:", task.id)}
+                      onClick={() => {
+                        dispatch(
+                          openModal({
+                            isCreate: false,
+                            context: {
+                              fromBoard: true,
+                              taskId: task.id,
+                              boardId: Number(id),
+                            },
+                          })
+                        );
+                      }}
                     />
                   ))
                 )}

@@ -1,0 +1,19 @@
+.modalContentWrapper {
+  background-color: var(--color-light);
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--container-gap);
+  padding: var(--card-gap);
+}
+
+.modalContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.closeButtonWrapper {
+  display: flex;
+  flex-direction: column;
+}
